@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+# Shadcn React Components Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Shadcn Components Playground! This app lets developers test and configure our React components in real-time. Explore, experiment, and accelerate your project development with ease.
 
-Currently, two official plugins are available:
+It also serves developers as an example of basic configuration for a new project with React + Vite + Tailwind.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites -> Must have installed
 
-## Expanding the ESLint configuration
+- Node.js (Version >= 18)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+   ```bash
+   git clone
+
+   ```
+
+2. Access folder
+
+   ```bash
+   cd poc-shadcn/playground
+
+   ```
+
+3. Install dependencies:
+   ```bash
+   yarn
+   ```
+
+### Link the component library
+
+```bash
+cd poc-shadcn/
+yarn link
+cd poc-shadcn/playground
+yarn link @son-pablo/lib
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Available Scripts
+
+- Development Server. Run the development server:
+  ```bash
+  yarn dev
+  ```
+  Open http://localhost:5173/ in your browser to view the app.
