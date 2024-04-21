@@ -6,34 +6,40 @@ import dts from "vite-plugin-dts";
 
 export default defineConfig({
   plugins: [
-    // react plugin -> parameter js6 runtime. This enable to make bundle a bit smaller
+    // React plugin with jsx runtime set to "classic" for smaller bundle size
     react({
       jsxRuntime: "classic",
     }),
-    // dts is for building declaration
+    // Plugin for building declaration files (.d.ts)
     dts({
       include: ["src/**/*"],
     }),
   ],
   build: {
+    // Do not copy the public directory
     copyPublicDir: false,
+    // Library configuration
     lib: {
+      // Entry point of the library
       entry: resolve(__dirname, "src/index.ts"),
-
+      // Output formats: ES module and CommonJS
       formats: ["es", "cjs"],
+      // Output file name pattern
       fileName: (ext) => `index.${ext}.js`,
     },
-    // don't include the deps and peerDeps in the build. So, deps and peerDeps are not part of the final library.
+    // Exclude dependencies from the build, ensuring they are not part of the final library
     rollupOptions: {
       external: [
+        // External dependencies: peerDependencies and dependencies from package.json
         ...Object.keys(peerDependencies),
         ...Object.keys(dependencies),
       ],
-      // preserveModules -> important for tree shaking. Combined with sideEffect field from package.json make the lib tree chakeable.
+      // Preserve modules for tree shaking, exports named for better compatibility
       output: { preserveModules: true, exports: "named" },
     },
 
     target: "esnext",
+    // Generate source maps for debugging
     sourcemap: true,
   },
 });
