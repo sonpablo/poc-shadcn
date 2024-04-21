@@ -1,0 +1,7 @@
+.main-container {
+  min-height: 100vh;
+  display: flex;
+}
+.main-container > * {
+  margin: auto;
+}
