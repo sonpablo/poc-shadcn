@@ -13,7 +13,7 @@ It also serves developers as an example of basic configuration for a new project
 1. Clone the repository:
 
    ```bash
-   git clone
+   git clone https://github.com/sonpablo/poc-shadcn.git
 
    ```
 
