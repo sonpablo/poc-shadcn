@@ -8,6 +8,9 @@ It also serves developers as an example of basic configuration for a new project
 
 - Node.js (Version >= 18)
 
+> ⛔️
+> **Never make changes to this project. It is only for you to test the components you create in the component library.** ⛔️
+
 ### Installation
 
 1. Clone the repository:
